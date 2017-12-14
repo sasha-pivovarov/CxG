@@ -1,2 +1,1 @@
-# Polymatis
 # CxG
