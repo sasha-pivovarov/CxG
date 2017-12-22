@@ -45,11 +45,15 @@ forest_classifier.fit(X, y)
 print(X.columns)
 plt.xlabel(list(X.columns))
 plt.plot(forest_classifier.feature_importances_)
-plt.show()
-
-tree_classifier = DecisionTreeClassifier(criterion="entropy")
+# plt.show()
+CV_classifier = GridSearchCV(DecisionTreeClassifier(criterion="entropy"), param_grid={"min_samples_split":[2, 5, 10],
+                                                                                      "max_depth":[2, 5, 10],
+                                                                                      "max_leaf_nodes":[10, 20, 30]})
+tree_classifier = DecisionTreeClassifier(criterion="entropy", min_samples_split=10, max_depth=3, max_leaf_nodes=20)
 X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True)
 tree_classifier.fit(X_train, y_train)
+CV_classifier.fit(X_train, y_train)
+print(CV_classifier.best_params_)
 pred = tree_classifier.predict(X_test)
 print(classification_report(y_test, pred))
 print(accuracy_score(y_test, pred))
@@ -60,4 +64,4 @@ dot_data = export_graphviz(tree_classifier, out_file=None,
                          filled=True, rounded=True,
                          special_characters=True)
 graph = graphviz.Source(dot_data)
-graph.render("tree.png")
+graph.render("tree")
