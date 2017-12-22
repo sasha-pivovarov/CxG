@@ -23,6 +23,11 @@ DEP_POS   |  32.2305574846618   |  1.93145320813297e-08  |  23.3862564036554  | 
 VERB_STR  |  2.97162053296586   |  0.0851331768726912    |  9.03706254192956  |  0.00264560396102244
 VERB_DEP  |  2.38866017831661   |  0.12262394270845      |  15.7814510289386  |  7.10961227397605e-05
 
+![alt text](https://i.imgur.com/Y4bi3tZ.png "Verb dependency structure tag")
+![alt text](https://i.imgur.com/MGH32Nu.png "Theme dependency structure tag")
+![alt text](https://i.imgur.com/Ysq6ab0.png "Theme POS tag (fine-grained)")
+![alt text](https://i.imgur.com/N030wFz.png "Theme POS tag (coarse)")
+
 ## Мультифакторный анализ
 Далее использовался лес решений, чтобы оценить важность признаков, после чего было обучено дерево решений. Результаты классификации на обучающей и тестовой выборке:
 
