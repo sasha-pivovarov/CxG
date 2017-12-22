@@ -47,6 +47,8 @@ TEST:
 
 avg / total       0.59      0.59      0.59       196
 
+ACCURACY: 0.581632653061
+
 ## Содержательный лингвистический анализ результатов статистического анализа
 ![alt text](https://i.imgur.com/JQfQcL2.png "Feature importances in the same order as on table")
 #
