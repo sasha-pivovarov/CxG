@@ -1,12 +1,13 @@
 import pandas as pd
 import numpy as np
 from sklearn import linear_model
+import graphviz
 from sklearn.preprocessing import LabelEncoder
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_selection import f_classif, chi2
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
@@ -42,13 +43,21 @@ statframe.to_csv("stats.csv")
 forest_classifier = RandomForestClassifier(n_estimators=50)
 forest_classifier.fit(X, y)
 print(X.columns)
+plt.xlabel(list(X.columns))
 plt.plot(forest_classifier.feature_importances_)
 plt.show()
-tree_classifier = GridSearchCV(DecisionTreeClassifier(), param_grid={"criterion":["gini", "entropy"],
-                                                                     "splitter":["best", "random"],
-                                                                     "max_features":["auto", None]})
 
+tree_classifier = DecisionTreeClassifier(criterion="entropy")
 X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True)
 tree_classifier.fit(X_train, y_train)
 pred = tree_classifier.predict(X_test)
 print(classification_report(y_test, pred))
+print(accuracy_score(y_test, pred))
+
+dot_data = export_graphviz(tree_classifier, out_file=None,
+                         feature_names=list(X_train.columns),
+                         class_names=["over", "about"],
+                         filled=True, rounded=True,
+                         special_characters=True)
+graph = graphviz.Source(dot_data)
+graph.render("tree.png")
