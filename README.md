@@ -33,12 +33,19 @@ VERB_DEP  |  15.7814510289386  |  7.10961227397605e-05
 Здесь мы можем видеть, что положение темы в структуре зависимостей и лемма глагола не являются независимыми от остальных признаков.
 
 ![alt text](https://i.imgur.com/Y4bi3tZ.png "Verb dependency structure tag")
+
 Распределение всех положений глагола в структуре зависимостей между over и about.
+
 ![alt text](https://i.imgur.com/MGH32Nu.png "Theme dependency structure tag")
+
 Распределение всех положений темы в структуре зависимостей между over и about.
+
 ![alt text](https://i.imgur.com/Ysq6ab0.png "Theme POS tag (fine-grained)")
+
 Распределение всех частей речи в структуре зависимостей между over и about.
+
 ![alt text](https://i.imgur.com/N030wFz.png "Theme POS tag (coarse)")
+
 Распределение всех частей речи (coarse) в структуре зависимостей между over и about.
 
 ## Мультифакторный анализ
@@ -86,19 +93,22 @@ ACCURACY: 0.678571428571
     
 Дерево для этого эксперимента показано в tree3.pdf
 Однако деревья решений scikit-learn не похволяют моделировать категориальные признаки (так или иначе они интерпретируются как ординальные), поэтому также была обучена модель в R (party).
+
 ![alt text](https://i.imgur.com/6egbA3n.png "R tree graph")
-Variables actually used in tree construction:
-[1] DEP_TAG  VERB_DEP VERB_STR
+    
+    
+    Variables actually used in tree construction:
+    DEP_TAG  VERB_DEP VERB_STR
 
-Root node error: 348/763 = 0.45609
+    Root node error: 348/763 = 0.45609
 
-n= 763 
+    n= 763 
 
         CP nsplit rel error  xerror     xstd
-1 0.181034      0   1.00000 1.00000 0.039534
-2 0.015086      1   0.81897 0.85345 0.038702
-3 0.012931      5   0.75862 0.87644 0.038881
-4 0.010000      7   0.73276 0.88218 0.038923
+    1 0.181034      0   1.00000 1.00000 0.039534
+    2 0.015086      1   0.81897 0.85345 0.038702
+    3 0.012931      5   0.75862 0.87644 0.038881
+    4 0.010000      7   0.73276 0.88218 0.038923
 
 Эта модель имеет сравнительно большую ошибку, но вероятно, дело в sklearn.
 
