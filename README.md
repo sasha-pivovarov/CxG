@@ -1,7 +1,7 @@
 # Выбор предлога в английских глаголах эмоционального состояния
 
 ### Материалы
-<a href="github.com/sasha-pivovarov/CxG/tagged2.csv> Данные </a>
+<a href="github.com/sasha-pivovarov/CxG/tagged2.csv"> Данные </a>
 
 ## Рабочая гипотеза
 
