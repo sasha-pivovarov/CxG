@@ -1,7 +1,7 @@
 # Выбор предлога в английских глаголах эмоционального состояния
 
 ### Материалы
-<a href="github.com/sasha-pivovarov/CxG/tagged2.csv"> Данные </a>
+<a href="tagged2.csv"> Данные </a>
 
 ## Рабочая гипотеза
 
@@ -100,7 +100,7 @@ ACCURACY: 0.678571428571
 
 ![alt text](https://i.imgur.com/W8DnOwF.png "Rsquared for model 1")
 
-Модель два, с леммами темы - визуализация <a href="github.com/sasha-pivovarov/CxG/rtree2.pdf">здесь</a>. Объясняет 60% дисперсии, что всё ещё недостаточно, чтобы считать этот набор признаков полным.
+Модель два, с леммами темы - визуализация <a href="rtree2.pdf">здесь</a>. Объясняет 60% дисперсии, что всё ещё недостаточно, чтобы считать этот набор признаков полным.
 
 ![alt text](https://i.imgur.com/S5RrsUH.png "Rsquared for model 2")
 
